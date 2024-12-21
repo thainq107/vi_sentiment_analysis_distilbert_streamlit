@@ -12,7 +12,7 @@ def main():
   text_input = st.text_input("Sentence: ", "đồ ăn ngon!")
   result = classifier(text_input)[0]
   label = int(result['label'].split('_')[-1])
-  score = int(result['score'])
+  score = result['score']*100
   st.success(f'Sentiment: {label} with {score:.2f} % probability.') 
 
 if __name__ == '__main__':
